@@ -47,17 +47,15 @@ blablab
 For this session, we will use a postgre database : 
 https://hub.docker.com/_/postgres/
 ````
-docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres 
+docker run --name some-postgres -d -e POSTGRES_PASSWORD=mysecretpassword -d postgres 
 ````
 ---
 ## PGAdmin
 PGAdmin is the admistration site for PostGres 
 https://hub.docker.com/r/dpage/pgadmin4/
 ````
-docker run -p 5555:80 -e "PGADMIN_DEFAULT_EMAIL=test@test.com" -e "PGADMIN_DEFAULT_PASSWORD=password" dpage/pgadmin4 
+docker run  -p 5555:80 -e "PGADMIN_DEFAULT_EMAIL=test@test.com" -d -e "PGADMIN_DEFAULT_PASSWORD=password" dpage/pgadmin4
 ````
-Once container has started, you will have access to this url : 
-http://your-ip:5555
 ---
 ## Docker network 
 Create a network and connect your 2 containers
@@ -67,8 +65,20 @@ docker network connect isolated_nw yyyy
 docker network connect isolated_nw xxxx
 ````
 ---
+## Configure vbox redirection
+![Alt Text](assets\vboxredirect.png)
+---
 ## Connection with PGAdmin
 Now you can try to connect to your DB in PGAdmin
+http://your-ip:5555
+---
+## Configure PGADMIN
+You have to retrieve the internal ip of the postgres container 
+````
+docker inspect some-postres 
+````
+And you can configure the connection in PGAdmin
+![Alt Text](assets\pgadmindb.png)
 ---
 ## Usefull docker command
 - docker attach
@@ -83,6 +93,20 @@ dotnet new webapi -o Backend
 ````
 Now, build and test
 ---
+## And now create your container
+Create a dockerfile for your project
+https://docs.docker.com/engine/examples/dotnetcore/ 
+---
+## And now create your container
+Build the image :
+````
+docker build --no-cache -t backend .  
+```` 
+## And now create your container
+And run it ...
+````
+docker run -p 80:80 backend   
+```` 
 ## Create your WebApi
 ````
 dotnet new webapi -o Backend
