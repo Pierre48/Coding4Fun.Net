@@ -13,4 +13,5 @@ RUN dotnet publish -c Release -o out
 FROM microsoft/dotnet:aspnetcore-runtime
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+EXPOSE 80
+ENTRYPOINT ["dotnet", "Backend.dll"]
