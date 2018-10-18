@@ -23,13 +23,8 @@ https://docs.docker.com/toolbox/toolbox_install_windows/
 - Launch docker (You should have a shortcut on your desktop))
 - You can do a quick test with : 
 ````
-docker run hello-world" 
+docker run hello-world
 ````
----
-
-## Network setting about docker
-- use bridge mode in vbox network setting
-- retrieve the ip with the command "ifconfig"
 ---
 ## Visual Studio Code 
 https://code.visualstudio.com/
@@ -44,7 +39,7 @@ https://www.microsoft.com/net/learn/get-started-with-dotnet-tutorial
 - Create a repository named Coding4Fun.Net
 ---
 
-## Step 3 (Backend)
+## Step 2 (Backend)
 blablab
 +++
 
@@ -65,16 +60,50 @@ Once container has started, you will have access to this url :
 http://your-ip:5555
 ---
 ## Docker network 
-???
+Create a network and connect your 2 containers
+````
+docker network create --driver bridge isolated_nw 
+docker network connect isolated_nw yyyy
+docker network connect isolated_nw xxxx
+````
+---
+## Connection with PGAdmin
+Now you can try to connect to your DB in PGAdmin
+---
+## Usefull docker command
+- docker attach
+- docker image
+- docker ps
+- docker inspect
 ---
 ## Create your WebApi
+create a src folder and launch this command in this folder
+````
+dotnet new webapi -o Backend
+````
+Now, build and test
+---
+## Create your WebApi
+````
+dotnet new webapi -o Backend
+````
+Now, build and test (https://localhost:5001/api/Values)
+---
+## And now as a container
+````
+dotnet new webapi -o Backend
+````
+Now, build and test (https://localhost:5001/api/Values)
 ---
 
 
 
 
-
-
+## Annexe
+kill all running containers with docker kill $(docker ps -q) 
+delete all stopped containers with docker rm $(docker ps -a -q) 
+delete all images with docker rmi $(docker images -q) 
+ 
 
 
 ## Create your WebApi
