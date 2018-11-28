@@ -2,14 +2,15 @@
 ---
 
 # Presentation
-Blabla
+
+![intro](assets/intro.jpg)
+
 ---
 # Prerequisite
 Administrator on windows
 laptop (Core i7, 8Go ram)
 ---
 # Step 1 (Environment)
-blablab
 
 +++
 
@@ -40,7 +41,7 @@ https://www.microsoft.com/net/learn/get-started-with-dotnet-tutorial
 ---
 
 ## Step 2 (Backend)
-blablab
+
 +++
 
 ## Creation of a database
@@ -49,7 +50,7 @@ https://hub.docker.com/_/postgres/
 ````
 docker run --name some-postgres -d -e POSTGRES_PASSWORD=mysecretpassword -d postgres 
 ````
----
++++
 ## PGAdmin
 PGAdmin is the admistration site for PostGres 
 https://hub.docker.com/r/dpage/pgadmin4/
@@ -66,7 +67,7 @@ docker network connect isolated_nw xxxx
 ````
 ---
 ## Configure vbox redirection
-![Alt Text](assets\vboxredirect.png)
+![Alt Text](assets/vboxredirect.png)
 ---
 ## Connection with PGAdmin
 Now you can try to connect to your DB in PGAdmin
@@ -78,7 +79,7 @@ You have to retrieve the internal ip of the postgres container
 docker inspect some-postres 
 ````
 And you can configure the connection in PGAdmin
-![Alt Text](assets\pgadmindb.png)
+![Alt Text](assets/pgadmindb.png)
 ---
 ## Usefull docker command
 - docker attach
@@ -92,6 +93,11 @@ create a src folder and launch this command in this folder
 dotnet new webapi -o Backend
 ````
 Now, build and test
+
+````
+dotnet build
+dotnet run 
+````
 ---
 ## And now create your container
 Create a dockerfile for your project
@@ -121,14 +127,21 @@ Now, build and test (https://localhost:5001/api/Values)
 ---
 
 
-
-
 ## Annexe
 kill all running containers with docker kill $(docker ps -q) 
 delete all stopped containers with docker rm $(docker ps -a -q) 
 delete all images with docker rmi $(docker images -q) 
  
+## Docker hub
 
+(https://hub.docker.com/)
+
+## Rancher 
+
+- Install vagrant (https://www.vagrantup.com/downloads.html)
+- Update powershell (https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6)
+- Install vagrant-hostmanager ````vagrant plugin install vagrant-hostmanager````
+- (https://gitlab.com/mug-in-clermont-public/M6-2018)
 
 ## Create your WebApi
 Install the asp.net authority for development certificate
