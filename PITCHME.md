@@ -126,19 +126,25 @@ dotnet new webapi -o Backend
 Now, build and test (https://localhost:5001/api/Values)
 ---
 
-## Perist your data 
+## Persist your data with ef core
 
-Follow this guide (https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/new-db?tabs=visual-studio)
-and this link for postgres (http://www.npgsql.org/efcore/)
+ - Follow this guide (https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/new-db?tabs=visual-studio)
+ - and this link for postgres (http://www.npgsql.org/efcore/)
+
+---
 
 ## Annexe
 kill all running containers with docker kill $(docker ps -q) 
 delete all stopped containers with docker rm $(docker ps -a -q) 
 delete all images with docker rmi $(docker images -q) 
- 
+
+--- 
+
 ## Docker hub
 
 (https://hub.docker.com/)
+
+---
 
 ## Rancher 
 
@@ -146,6 +152,8 @@ delete all images with docker rmi $(docker images -q)
 - Update powershell (https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6)
 - Install vagrant-hostmanager ````vagrant plugin install vagrant-hostmanager````
 - (https://gitlab.com/mug-in-clermont-public/M6-2018)
+
+---
 
 ## Create your WebApi
 Install the asp.net authority for development certificate
