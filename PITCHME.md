@@ -126,6 +126,10 @@ dotnet new webapi -o Backend
 Now, build and test (https://localhost:5001/api/Values)
 ---
 
+## Perist your data 
+
+Follow this guide (https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/new-db?tabs=visual-studio)
+and this link for postgres (http://www.npgsql.org/efcore/)
 
 ## Annexe
 kill all running containers with docker kill $(docker ps -q) 
