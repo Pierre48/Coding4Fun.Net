@@ -137,6 +137,12 @@ Connection string (https://www.connectionstrings.com/postgresql/)
 
 ---
 
+## Document Your API with Swagger
+
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-2.2&tabs=visual-studio
+
+---
+
 ## Annexe
 kill all running containers with docker kill $(docker ps -q) 
 delete all stopped containers with docker rm $(docker ps -a -q) 
