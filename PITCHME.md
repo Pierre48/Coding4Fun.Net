@@ -130,6 +130,10 @@ Now, build and test (https://localhost:5001/api/Values)
 
  - Follow this guide (https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/new-db?tabs=visual-studio)
  - and this link for postgres (http://www.npgsql.org/efcore/)
+ 
++++
+
+Connection string (https://www.connectionstrings.com/postgresql/)
 
 ---
 
