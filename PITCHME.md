@@ -130,7 +130,7 @@ Now, build and test (https://localhost:5001/api/Values)
 
  - Follow this guide (https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/new-db?tabs=visual-studio)
  - and this link for postgres (http://www.npgsql.org/efcore/)
- 
+ - 
 +++
 
 Connection string (https://www.connectionstrings.com/postgresql/)
@@ -141,6 +141,22 @@ Connection string (https://www.connectionstrings.com/postgresql/)
 
 https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-2.2&tabs=visual-studio
 
+---
+
+## Blazor : a front end with webassembly 
+
+https://blazor.net/
+
+- Follow the getting started  
+  
++++
+
+ - Create a dotnet standard library with your models 
+  
++++
+ 
+  
+  
 ---
 
 ## Annexe
