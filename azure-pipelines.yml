@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  imageName: 'Coding4Fun:$(Build.BuildId)'
+  imageName: 'coding4fun:$(Build.BuildId)'
 
 steps:
 - script: |
