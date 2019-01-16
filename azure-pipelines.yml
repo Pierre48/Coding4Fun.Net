@@ -15,7 +15,7 @@ variables:
 
 steps:
 - script: 
-    cd src/backEnd
+    cd src/BackEnd
     dotnet build --configuration $(buildConfiguration)
     dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
     dotnet publish --configuration $(buildConfiguration) --output out
