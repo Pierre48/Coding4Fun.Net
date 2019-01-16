@@ -16,7 +16,7 @@ laptop (Core i7, 8Go ram)
 
 ## Proxy configuration
 Public Wifi or 4G :(
----
++++
 
 ## Docker 
 https://docs.docker.com/toolbox/toolbox_install_windows/
@@ -26,19 +26,19 @@ https://docs.docker.com/toolbox/toolbox_install_windows/
 ````
 docker run hello-world
 ````
----
++++
 ## Visual Studio Code 
 https://code.visualstudio.com/
----
++++
 
 ## DotNetCore
 https://www.microsoft.com/net/learn/get-started-with-dotnet-tutorial
----
++++
 
 ## Github
 - Create your accout
 - Create a repository named Coding4Fun.Net
----
++++
 
 ## Step 2 (Backend)
 
@@ -170,14 +170,6 @@ delete all images with docker rmi $(docker images -q)
 
 (https://hub.docker.com/)
 
----
-
-## Rancher 
-
-- Install vagrant (https://www.vagrantup.com/downloads.html)
-- Update powershell (https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6)
-- Install vagrant-hostmanager ````vagrant plugin install vagrant-hostmanager````
-- (https://gitlab.com/mug-in-clermont-public/M6-2018)
 
 ---
 
@@ -187,3 +179,52 @@ Install the asp.net authority for development certificate
 dotnet dev-certs https --trust 
 ````
 ---
+# Step 3 (Front)
+
++++
+Blazor
+
+---
+
+
+---
+# Step 4 Build & Deploy
+
++++
+## Today
+- Build with Azure DevOps
+- Deploy in a registry
+- Run it in Rancher
+
+---
+# Build with Azure Pipeline
+---
+## Allows Azure DevOps to access to your Github project
+https://github.com/marketplace/azure-pipelines
+- Setup a plan
+- install for free
+- complete order
+- Select you re pository and install
+
+## Azure DevOps configuration
+Create your organization (i.e Coding4FunNet)
+
+New Pipeline
+-Select your repository
+- Select template (Asp.Net Core)
+- Save and run
+(Check in your source for pipeline definition
+
+---
+## Build with Azure Pipeline
+
+---
+## Docker Registry
+Docker hub
+(https://hub.docker.com/)
+---
+## Rancher 
+- Install vagrant (https://www.vagrantup.com/downloads.html)
+- Update powershell (https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6)
+- Install vagrant-hostmanager ````vagrant plugin install vagrant-hostmanager````
+- https://gitlab.com/mug-in-clermont-public/M6-2018
