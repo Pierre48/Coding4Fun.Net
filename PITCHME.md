@@ -38,7 +38,7 @@ https://www.microsoft.com/net/learn/get-started-with-dotnet-tutorial
 ## Github
 - Create your accout
 - Create a repository named Coding4Fun.Net
-+++
+---
 
 ## Step 2 (Backend)
 
@@ -57,7 +57,7 @@ https://hub.docker.com/r/dpage/pgadmin4/
 ````
 docker run  -p 5555:80 -e "PGADMIN_DEFAULT_EMAIL=test@test.com" -d -e "PGADMIN_DEFAULT_PASSWORD=password" dpage/pgadmin4
 ````
----
++++
 ## Docker network 
 Create a network and connect your 2 containers
 ````
@@ -65,14 +65,14 @@ docker network create --driver bridge isolated_nw
 docker network connect isolated_nw yyyy
 docker network connect isolated_nw xxxx
 ````
----
++++
 ## Configure vbox redirection
 ![Alt Text](assets/vboxredirect.png)
----
++++
 ## Connection with PGAdmin
 Now you can try to connect to your DB in PGAdmin
 http://your-ip:5555
----
++++
 ## Configure PGADMIN
 You have to retrieve the internal ip of the postgres container 
 ````
@@ -80,13 +80,13 @@ docker inspect some-postres
 ````
 And you can configure the connection in PGAdmin
 ![Alt Text](assets/pgadmindb.png)
----
++++
 ## Usefull docker command
 - docker attach
 - docker image
 - docker ps
 - docker inspect
----
++++
 ## Create your WebApi
 create a src folder and launch this command in this folder
 ````
@@ -98,11 +98,11 @@ Now, build and test
 dotnet build
 dotnet run 
 ````
----
++++
 ## And now create your container
 Create a dockerfile for your project
 https://docs.docker.com/engine/examples/dotnetcore/ 
----
++++
 ## And now create your container
 Build the image :
 ````
@@ -118,13 +118,13 @@ docker run -p 80:80 backend
 dotnet new webapi -o Backend
 ````
 Now, build and test (https://localhost:5001/api/Values)
----
++++
 ## And now as a container
 ````
 dotnet new webapi -o Backend
 ````
 Now, build and test (https://localhost:5001/api/Values)
----
++++
 
 ## Persist your data with ef core
 
@@ -135,13 +135,31 @@ Now, build and test (https://localhost:5001/api/Values)
 
 Connection string (https://www.connectionstrings.com/postgresql/)
 
----
++++
 
 ## Document Your API with Swagger
 
 https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-2.2&tabs=visual-studio
+    
 
++++ 
+
+## Docker hub
+
+(https://hub.docker.com/)
+
+
++++
+
+## Create your WebApi
+Install the asp.net authority for development certificate
+````
+dotnet dev-certs https --trust 
+````
 ---
+# Step 3 (Front)
+
++++
 
 ## Blazor : a front end with webassembly 
 
@@ -154,35 +172,6 @@ https://blazor.net/
  - Create a dotnet standard library with your models 
   
 +++
- 
-  
-  
----
-
-## Annexe
-kill all running containers with docker kill $(docker ps -q) 
-delete all stopped containers with docker rm $(docker ps -a -q) 
-delete all images with docker rmi $(docker images -q) 
-
---- 
-
-## Docker hub
-
-(https://hub.docker.com/)
-
-
----
-
-## Create your WebApi
-Install the asp.net authority for development certificate
-````
-dotnet dev-certs https --trust 
-````
----
-# Step 3 (Front)
-
-+++
-Blazor
 
 ---
 
@@ -196,9 +185,9 @@ Blazor
 - Deploy in a registry
 - Run it in Rancher
 
----
++++
 # Build with Azure Pipeline
----
++++
 ## Allows Azure DevOps to access to your Github project
 https://github.com/marketplace/azure-pipelines
 - Setup a plan
@@ -215,16 +204,23 @@ New Pipeline
 - Save and run
 (Check in your source for pipeline definition
 
----
++++
 ## Build with Azure Pipeline
 
----
++++
 ## Docker Registry
 Docker hub
 (https://hub.docker.com/)
----
++++
 ## Rancher 
 - Install vagrant (https://www.vagrantup.com/downloads.html)
 - Update powershell (https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6)
 - Install vagrant-hostmanager ````vagrant plugin install vagrant-hostmanager````
 - https://gitlab.com/mug-in-clermont-public/M6-2018
+
+---
+
+## Annexe
+kill all running containers with docker kill $(docker ps -q) 
+delete all stopped containers with docker rm $(docker ps -a -q) 
+delete all images with docker rmi $(docker images -q) 
