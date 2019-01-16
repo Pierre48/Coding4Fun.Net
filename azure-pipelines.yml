@@ -11,7 +11,22 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  imageName: 'Coding4Fun:$(Build.BuildId)'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- script: 
+    cd ./src/BackEnd/
+    dotnet build --configuration $(buildConfiguration)
+    dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
+    dotnet publish --configuration $(buildConfiguration) --output out
+    docker build -f Dockerfile -t $(dockerId)/$(imageName) .
+    docker login -u $(dockerId) -p $pswd
+    docker push $(dockerId)/$(imageName)
+  env:
+    pswd: $(dockerPassword)
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
